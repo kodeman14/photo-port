@@ -10,24 +10,30 @@ const categories = [
 ]
 const mockCurrentCategory = jest.fn()
 const mockSetCurrentCategory = jest.fn()
+const mockContactSelected = jest.fn()
+const mockSetContactSelected = jest.fn()
 
 describe('Nav component', () => {
   it('renders', () => {
     render(
       <Nav
         categories={categories}
-        setCurrentCategory={mockSetCurrentCategory}
         currentCategory={mockCurrentCategory}
+        setCurrentCategory={mockSetCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
       />
     )
   })
 
-  it('matches snapshot DOM node structure', () => {
+  it('matches snapshot', () => {
     const { asFragment } = render(
       <Nav
         categories={categories}
-        setCurrentCategory={mockSetCurrentCategory}
         currentCategory={mockCurrentCategory}
+        setCurrentCategory={mockSetCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
       />
     )
     expect(asFragment()).toMatchSnapshot()
@@ -39,8 +45,10 @@ describe('emoji is visible', () => {
     const { getByLabelText } = render(
       <Nav
         categories={categories}
-        setCurrentCategory={mockSetCurrentCategory}
         currentCategory={mockCurrentCategory}
+        setCurrentCategory={mockSetCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
       />
     )
 
@@ -53,8 +61,10 @@ describe('links are visible', () => {
     const { getByTestId } = render(
       <Nav
         categories={categories}
-        setCurrentCategory={mockSetCurrentCategory}
         currentCategory={mockCurrentCategory}
+        setCurrentCategory={mockSetCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
       />
     )
     expect(getByTestId('link')).toHaveTextContent('Oh Snap!')

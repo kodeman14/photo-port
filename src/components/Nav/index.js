@@ -32,7 +32,7 @@ function Nav(props) {
               href='#about'
               onClick={() => setContactSelected(false)}
             >
-              About
+              About me
             </a>
           </li>
           <li>
