@@ -1,9 +1,12 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import Gallery from '../components/Gallery';
+import Gallery from '../components/Gallery'
 
-const portrait = { name: "portraits", description: "Portraits of people in my life" };
+const portrait = {
+  name: 'portraits',
+  description: 'Portraits of people in my life',
+}
 
 afterEach(cleanup)
 

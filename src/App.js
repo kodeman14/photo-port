@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import Nav from './components/Nav';
-import About from './components/About';
-import Gallery from './components/Gallery';
-import './App.css';
+import React, { useState } from 'react'
+import Nav from './components/Nav'
+import About from './components/About'
+import Gallery from './components/Gallery'
+import ContactForm from './components/Contact'
+import './App.css'
 
 function App() {
   const [categories] = useState([
@@ -17,21 +18,32 @@ function App() {
       name: 'landscape',
       description: 'Fields, farmhouses, waterfalls, and the beauty of nature',
     },
-  ]);
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  ])
+
+  const [currentCategory, setCurrentCategory] = useState(categories[0])
+  const [contactSelected, setContactSelected] = useState(false)
+
   return (
     <div>
       <Nav
         categories={categories}
-        setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
+        setCurrentCategory={setCurrentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
       />
       <main>
-        <Gallery currentCategory={currentCategory} />
-        <About />
+        {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory} />
+            <About />
+          </>
+        ) : (
+          <ContactForm />
+        )}
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
