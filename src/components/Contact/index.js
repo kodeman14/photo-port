@@ -40,8 +40,12 @@ function ContactForm() {
   return (
     <section>
       <h1>Contact me</h1>
+      {errorMessage && (
+        <div>
+          <p className="error-text">{errorMessage}</p>
+        </div>
+      )}
       <form id="contact-form" onSubmit={handleSubmit}>
-        <p>{errorMessage}</p>
         <div>
           <label htmlFor="name">Name:</label>
           <input
