@@ -13,7 +13,7 @@ function ContactForm() {
   function handleChange(e) {
     if (e.target.name === 'email') {
       const isValid = validateEmail(e.target.value)
-      // isValid conditional statement
+
       if (!isValid) {
         setErrorMessage('Your email is invalid.')
       } else {
@@ -39,41 +39,43 @@ function ContactForm() {
 
   return (
     <section>
-      <h1>Contact me</h1>
+      <h1 data-testid='h1tag'>Contact Me</h1>
       {errorMessage && (
         <div>
-          <p className="error-text">{errorMessage}</p>
+          <p className='error-text'>{errorMessage}</p>
         </div>
       )}
-      <form id="contact-form" onSubmit={handleSubmit}>
+      <form id='contact-form' onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor='name'>Name:</label>
           <input
-            type="text"
-            name="name"
+            type='text'
+            name='name'
             defaultValue={name}
             onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="email">Email address:</label>
+          <label htmlFor='email'>Email address:</label>
           <input
-            type="email"
-            name="email"
+            type='email'
+            name='email'
             defaultValue={email}
             onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="message">Message:</label>
+          <label htmlFor='message'>Message:</label>
           <textarea
-            name="message"
-            rows="5"
+            name='message'
+            rows='5'
             defaultValue={message}
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type='submit' data-testid='button'>
+          Submit
+        </button>
       </form>
     </section>
   )
