@@ -4,8 +4,8 @@ import { capitalizeFirstLetter } from "../../utils/helpers";
 function Nav(props) {
   const {
     categories = [],
-    setCurrentCategory,
     currentCategory,
+    setCurrentCategory,
   } = props;
 
   // function categorySelected(name) {
