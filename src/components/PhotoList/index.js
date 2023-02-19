@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import photo from '../../assets/small/commercial/0.jpg';
 
 function PhotoList({ category }) {
   const [photos] = useState([
@@ -122,12 +121,12 @@ function PhotoList({ category }) {
 
   return (
     <div>
-      <div className="flex-row">
+      <div className='flex-row'>
         {currentPhotos.map((image, i) => (
           <img
             src={require(`../../assets/small/${category}/${i}.jpg`)}
             alt={image.name}
-            className="img-thumbnail mx-1"
+            className='img-thumbnail mx-1'
             key={image.name}
           />
         ))}

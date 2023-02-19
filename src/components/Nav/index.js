@@ -17,21 +17,23 @@ function Nav(props) {
   return (
     <header>
       <h2>
-        <a data-testid="link" href="/">
-          <span role="img" aria-label="camera">
+        <a data-testid='link' href='/'>
+          <span role='img' aria-label='camera'>
             📸
           </span>{' '}
           Oh Snap!
         </a>
       </h2>
       <nav>
-        <ul className="flex-row">
+        <ul className='flex-row'>
           <li className={`mx-2 ${contactSelected && 'navActive'}`}>
             <a
-              data-testid="about"
-              href="#about"
+              data-testid='about'
+              href='#about'
               onClick={() => setContactSelected(false)}
-            />
+            >
+              About
+            </a>
           </li>
           <li>
             <span onClick={() => setContactSelected(true)}>Contact</span>
@@ -54,7 +56,6 @@ function Nav(props) {
                 {capitalizeFirstLetter(category.name)}
               </span>
             </li>
-            // <li className={`mx-1 ${currentCategory.name === category.name && 'navActive'}`}>
           ))}
         </ul>
       </nav>
