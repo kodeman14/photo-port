@@ -8,10 +8,10 @@ function Nav(props) {
     currentCategory,
   } = props;
 
-  function categorySelected(name) {
-    console.log('hello')
-    console.log(`${name} clicked`)
-  }
+  // function categorySelected(name) {
+  //   console.log('hello')
+  //   console.log(`${name} clicked`)
+  // }
 
   useEffect(() => {
     document.title = capitalizeFirstLetter(currentCategory.name);
@@ -21,7 +21,7 @@ function Nav(props) {
     <header>
       <h2>
         <a data-testid='link' href='/'>
-          <span role='img' aria-label='camera'> 📸</span> Oh Snap!
+          <span role='img' aria-label='camera'>📸</span> Oh Snap!
         </a>
       </h2>
       <nav>
